@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0084ff" height="76.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Text fill="#fcfcfc" layoutX="220.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TrivMe" textAlignment="CENTER" wrappingWidth="159.21630859375">
+         <font>
+            <Font name="Bodoni 72 Bold" size="48.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
