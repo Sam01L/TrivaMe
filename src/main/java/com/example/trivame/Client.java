@@ -14,12 +14,12 @@ public class Client {
             // Client MUST create InputStream BEFORE OutputStream!!!!!!
             ObjectOutputStream myObjOutput = new ObjectOutputStream(ourSocket.getOutputStream());
             ObjectInputStream myObjInput = new ObjectInputStream(ourSocket.getInputStream());
-            CommunicationConnection newConnection = new CommunicationConnection("Mr. H",ourSocket,myObjInput,myObjOutput);
+            CommunicationConnection newConnection = new CommunicationConnection("Player",ourSocket,myObjInput,myObjOutput);
             CommunicationIn myCommunicationIn = new CommunicationIn(newConnection, false);
             Thread communicationInThread = new Thread(myCommunicationIn);
             communicationInThread.start();
 
-            TriviaMessage message1 = new TriviaMessage(1,1,"","Mr. H", "SERVER");
+            TriviaMessage message1 = new TriviaMessage(1,1,"Joined","Player", "SERVER");
             myObjOutput.writeObject(message1);
             myObjOutput.flush();
 
