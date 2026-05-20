@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trivame.HelloController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIME" height="30.0" layoutX="714.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" width="64.0" />
+      <Rectangle fx:id="correctRect" arcHeight="5.0" arcWidth="5.0" fill="LIME" height="30.0" layoutX="714.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" width="64.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="-6.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="809.0" />
       <Text layoutX="306.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TrivMe" wrappingWidth="243.4345703125">
          <font>
@@ -26,7 +26,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="startButton" layoutX="714.0" layoutY="104.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="64.0" style="-fx-background-color: #333333;" text="START" textFill="WHITE">
+      <Button fx:id="startButton" layoutX="714.0" layoutY="104.0" mnemonicParsing="false" onAction="#onStartClicked" prefHeight="30.0" prefWidth="64.0" style="-fx-background-color: #333333;" text="START" textFill="WHITE">
          <font>
             <Font name="Avenir Black Oblique" size="13.0" />
          </font>
@@ -36,22 +36,22 @@
             <Font name="Avenir Black Oblique" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="answerButton1" layoutY="318.0" mnemonicParsing="false" prefHeight="148.0" prefWidth="411.0" style="-fx-background-color: #5432ed;" text="1">
+      <Button fx:id="answerButton1" layoutY="318.0" mnemonicParsing="false" onAction="#onAnswer1" prefHeight="148.0" prefWidth="411.0" style="-fx-background-color: #5432ed;" text="1">
          <font>
             <Font name="Avenir Black Oblique" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="answerButton4" layoutX="411.0" layoutY="467.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="389.0" style="-fx-background-color: #38e309;" text="4">
+      <Button fx:id="answerButton4" layoutX="411.0" layoutY="467.0" mnemonicParsing="false" onAction="#onAnswer4" prefHeight="137.0" prefWidth="389.0" style="-fx-background-color: #38e309;" text="4">
          <font>
             <Font name="Avenir Black Oblique" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="answerButton3" layoutY="467.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="411.0" style="-fx-background-color: #e3c119;" text="3">
+      <Button fx:id="answerButton3" layoutY="467.0" mnemonicParsing="false" onAction="#onAnswer3" prefHeight="137.0" prefWidth="411.0" style="-fx-background-color: #e3c119;" text="3">
          <font>
             <Font name="Avenir Black Oblique" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="answerButton2" layoutX="411.0" layoutY="318.0" mnemonicParsing="false" prefHeight="148.0" prefWidth="389.0" style="-fx-background-color: #d92139;" text="2">
+      <Button fx:id="answerButton2" layoutX="411.0" layoutY="318.0" mnemonicParsing="false" onAction="#onAnswer2" prefHeight="148.0" prefWidth="389.0" style="-fx-background-color: #d92139;" text="2">
          <font>
             <Font name="Avenir Black Oblique" size="18.0" />
          </font>
@@ -61,13 +61,18 @@
             <Font name="Avenir Black Oblique" size="13.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0016" height="30.0" layoutX="714.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="64.0" />
+      <Rectangle fx:id="wrongRect" arcHeight="5.0" arcWidth="5.0" fill="#ff0016" height="30.0" layoutX="714.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" width="64.0" />
       <Label fx:id="wrongLabel" layoutX="714.0" layoutY="180.0" prefHeight="17.0" prefWidth="64.0" style="-fx-alignment: CENTER; -fx-font-family: &quot;Avenir Black Oblique&quot;; -fx-font-size: 13;" text="Wrong" textAlignment="CENTER">
          <font>
             <Font name="Avenir Black Oblique" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="questionCountLabel" layoutX="4.0" layoutY="133.0" prefHeight="44.0" prefWidth="71.0" text="0/15">
+      <Label fx:id="timerCount" layoutX="4.0" layoutY="133.0" prefHeight="44.0" prefWidth="71.0" text="Time" visible="false">
+         <font>
+            <Font name="Avenir Black Oblique" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="questionCountLabel" layoutX="4.0" layoutY="158.0" prefHeight="44.0" prefWidth="71.0" text="0/15" visible="false">
          <font>
             <Font name="Avenir Black Oblique" size="18.0" />
          </font>
